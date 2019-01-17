@@ -1,9 +1,20 @@
 import json
 
-
+def solve(cont,lista,a,v,B):
+    if a< len(lista):
+        if  (lista[a] in v) or (lista[a] in B):
+            cont+=1
+        else:
+            cont-=1
+        return solve(cont,lista,a+1,v,B)
+    else:
+        if cont>0:
+            return True
+        else:
+            return False
 # TODO Complete!
 def has_more_vowels(s):
-    return False
+    return solve(0,s,0,"aeiou","AEIOU")
 
 
 if __name__ == '__main__':

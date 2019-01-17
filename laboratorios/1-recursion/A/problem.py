@@ -1,9 +1,16 @@
 import json
 
-
+def solve(a,b):
+    if a>0:
+        b= b + text[a-1]
+        return solve(a-1,b)
+    else:
+        return b
 # TODO Complete!!
 def reverse(text):
-    return text
+    a= len(text)-1
+    b= text[a]
+    return solve(a,b)
 
 
 if __name__ == '__main__':

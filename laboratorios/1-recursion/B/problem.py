@@ -1,9 +1,16 @@
 import json
-
-
+def sort(lista,a,par,imp):
+    if a< len(lista):
+        if lista[a]%2==0:
+            par.append(lista[a])
+        else:
+            imp.append(lista[a])
+        return sort(lista,a+1,par,imp)
+    else:
+        return par+imp
 # TODO Complete!
 def arrange(numbers):
-    return numbers
+    return sort(numbers,0,[],[])
 
 
 if __name__ == '__main__':
