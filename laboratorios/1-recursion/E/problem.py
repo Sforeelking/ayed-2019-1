@@ -1,9 +1,18 @@
 import json
-
-
+def solve0(p):
+    if len(p)!=1:
+        q= solve(p,1,int(p[0]))
+        return solve0(q)
+    else:
+        return int(p)
+def solve(lista,a,suma):
+    if a< len(lista):
+        return solve(lista,a+1,suma+ int(lista[a]))
+    else:
+        return str(suma)
 # TODO Complete!
 def super_digit(n, k):
-    return 0
+    return solve0(n*k)
 
 
 if __name__ == '__main__':
