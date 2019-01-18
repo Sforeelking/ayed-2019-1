@@ -1,9 +1,16 @@
 import json
 
-
+def solv(n) : 
+    if (n == 1 or n == 0) : 
+        return 1
+    elif (n == 2) : 
+        return 2
+      
+    else : 
+        return solv(n - 3) + solv(n - 2) + solv(n - 1)  
 # TODO Complete!
 def compute_ways(n):
-    return 0
+    return solv(n)
 
 
 if __name__ == '__main__':
