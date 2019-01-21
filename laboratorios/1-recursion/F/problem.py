@@ -1,9 +1,13 @@
 import json
-
-
+def solv(disc, source,destination, aux):
+    if disc>1:
+        solv(disc-1,source,aux,destination)
+    print(f"{source} → {destination}")
+    if disc>1:
+        solv(disc-1, aux, destination, source)
 # TODO Complete!
 def hanoi(n):
-    return []
+    return solv(n,"A","B","C")
 
 
 if __name__ == '__main__':
